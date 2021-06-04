@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.element {
+    float: left;
+    width:400px;
+    height: 350px;
+    position: relative;
+    /* margin: 50px; */
+}
+
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.back {
+    background: linear-gradient(to bottom right, green, lightgreen);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 6px solid #222;
+    border-radius: 4px;
+    z-index: -2;
+    box-sizing: border-box;
+}
+
+.back-content {
+    padding: 0 40px;
+}
+
+.pname {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.description {
+    margin: 20px 0;
+}
+
+.icons .fab {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 8px;
+}
+
+
+/** element */
+.element:hover .front {
+    transform: translateY(-100%) rotateX(300deg);
+    opacity: 0;
+}
+
+.element .back {
+    background: linear-gradient(to bottom right, green, lightgreen);
+    transform:rotate(0deg);
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.element:hover .back {
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transform:rotate(-40deg);
+    
+}
+
+.element .back-content {
+    transform:rotate(0deg);
+    transition: all 0.5s ease;
+}
+
+.element:hover .back-content {
+    transform:rotate(40deg);
+}
+
+.element .back-content .pname {
+    transform:translateY(-50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .pname {
+    transform:translateY(0px);
+    opacity: 1;
+}
+
+.element .back-content .description {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .description {
+    opacity: 1;
+}
+
+.element .back-content .icons {
+    transform:translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .icons {
+    transform:translateY(0px);
+    opacity: 1;
+}
+

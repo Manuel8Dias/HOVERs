@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.element {
+    float: left;
+    width:400px;
+    height: 350px;
+    position: relative;
+    margin: 50px;
+}
+
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.back {
+    background: linear-gradient(to bottom right, green, lightgreen);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 6px solid #222;
+    border-radius: 4px;
+    z-index: -2;
+    box-sizing: border-box;
+}
+
+.back-content {
+    padding: 0 40px;
+}
+
+.pname {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.description {
+    margin: 20px 0;
+}
+
+.icons .fab {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 8px;
+}
+
+
+/** element */
+.element {
+    overflow: hidden;
+}
+
+.element .front {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.element:hover .front {
+    opacity: 0;
+}
+
+.element .back:before {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    top: 30px;
+    right: 30px;
+    border-top: 4px solid #ddd;
+    border-right: 4px solid #ddd;
+    transition: all 2s ease;
+}
+
+.element .back:after {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    bottom: 30px;
+    left: 30px;
+    border-bottom: 4px solid #ddd;
+    border-left: 4px solid #ddd;
+    transition: all 2s ease;
+}
+
+.element:hover .back:after, .element:hover .back:before {
+    width: 100px;
+    height: 100px;
+}
+
+.element .back-content .pname {
+    transform:translate(-70px, -70px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .pname {
+    transform:translateY(0px);
+    opacity: 1;
+}
+
+.element .back-content .description {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .description {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.element .back-content .icons {
+    transform:translate(70px, 70px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.element:hover .back-content .icons {
+    transform:translateY(0px);
+    opacity: 1;
+}

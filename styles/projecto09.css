@@ -75,6 +75,7 @@
 
 .element:hover .front {
     opacity: 0;
+    transform: translateX(100%) rotate(250deg);
 }
 
 .element .back:before {
@@ -104,6 +105,15 @@
 .element:hover .back:after, .element:hover .back:before {
     width: 100px;
     height: 100px;
+}
+
+.element .back-content {
+    transform: scale(0);
+    transition: all 1s ease;
+}
+
+.element .back-content {
+    transform: scale(1);
 }
 
 .element .back-content .pname {
